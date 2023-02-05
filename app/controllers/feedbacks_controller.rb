@@ -1,6 +1,5 @@
 class FeedbacksController < ApplicationController
   def create
-      feedback_params = params[:feedback]
       Feedback.create(feedback_params)
   end
 
