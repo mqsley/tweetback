@@ -37,6 +37,10 @@ class TwitterService
     if response.success?
       puts "Credentials work! Tweet:"
       puts JSON.pretty_generate(JSON.parse(response.body))
+      tweet_id = (JSON.parse(response.body))['data']['id']
+      tweet_url = "https://twitter.com/twitter/status/#{tweet_id}"
+      feedback.update(tweet_id: tweet_id, tweet_url: tweet_url)
+
     else
       puts "Credentials failed, please try generating again."
     end

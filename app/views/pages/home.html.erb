@@ -32,6 +32,10 @@ of feedback to a brand they love or hate</p>
         <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Submit Feedback</button>
         <!-- <a href="#" class="text-base font-semibold leading-7 text-white">Learn more <span aria-hidden="true">→</span></a> -->
       </div>
+        <% if session[:tweet_url] %>
+          <p class="text-white">Tweet Sent <a href="<%= session[:tweet_url]%>" target="_blank" class="text-yellow">View It</a></p>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="absolute top-1/2 left-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]" aria-hidden="true">
@@ -44,7 +48,7 @@ of feedback to a brand they love or hate</p>
     </defs>
   </svg>
 </div>
-<% end %>
+
 
 <script>
   const charCounter = document.getElementById('char_counter');
